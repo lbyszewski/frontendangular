@@ -28,6 +28,8 @@ export class UserServiceService {
   public findAll(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrlfind);
   }
+
+
   public findById(shopClientId: number): Observable<any>{
     return this.http.get<any>(this.userById + shopClientId);
   }

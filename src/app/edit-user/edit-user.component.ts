@@ -20,16 +20,13 @@ export class EditUserComponent implements OnInit {
       this.user = data;
     }, error => console.log(error));
   }
+
   updateUser(){
-    this.serviceUser.updateUser(this.shopClientId,this.user)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.user = new User();
-  }
-
-
-
-  onSubmit() {
-      this.updateUser();
+    this.serviceUser.updateUser(this.user.userShopId, this.user)
+      .subscribe(data => {
+        console.log(data);
+        this.user = data;
+      }, error => console.log(error));
   }
 
 }

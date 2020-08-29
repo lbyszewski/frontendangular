@@ -1,12 +1,14 @@
-<form (ngSubmit)="onSubmit()">
+
   <table>
   <tbody>
-  <tr>
-    <td>{{ user.userShopId }}</td>
-    <td><input type="user.userLogin"  /></td>
-    <td>{{ user.phoneNumber }}</td>
-  </tr>
+    <tbody>
+    <tr>
+      <td>{{ user.userShopId }}</td><br>
+      <td><input [(ngModel)]="user.userLogin">{{ user.userLogin }}</td><br>
+      <td><input [(ngModel)]="user.userEmail">{{ user.userEmail }}</td><br>
+      <td><input [(ngModel)]="user.phoneNumber">{{ user.phoneNumber }}</td><br>
+    </tr>
   </tbody>
   </table>
-</form>
-<button (click)="onSubmit()" class="btn btn-primary">Upgrade</button><br>
+
+<button (click)="updateUser()" class="btn btn-primary">Upgrade</button><br>
