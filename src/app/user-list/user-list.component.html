@@ -1,22 +1,27 @@
+<button (click)="addUser()" class="btn btn-primary">Add User</button><br>
 <div class="card my-5">
   <div class="card-body">
+
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
+        <th scope="col">Id</th>
         <th scope="col">Name</th>
-        <th scope="col">Password</th>
         <th scope="col">Email</th>
         <th scope="col">Phone</th>
+        <th scope="col">Actions</th>
 
 
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let user of users">
+        <td>{{ user.userShopId }}</td>
         <td>{{ user.userLogin }}</td>
-        <td>{{ user.userPassword }}</td>
         <td>{{ user.userEmail }}</td>
         <td>{{ user.phoneNumber }}</td>
+        <td><button class="btn btn-primary" (click)="showUserId(user.userShopId)">Details</button></td>
+        <td><button class="btn btn-primary" (click)="editUserId(user.userShopId)">Edit</button></td>
       </tr>
       </tbody>
     </table>

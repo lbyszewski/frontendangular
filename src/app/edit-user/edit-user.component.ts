@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {UserServiceService} from '../user-service.service';
+import {ActivatedRoute, Route, Router} from '@angular/router';
+import {User} from '../user';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-user',
@@ -6,10 +10,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
+  user: User;
+  shopClientId: number;
+  constructor(private serviceUser: UserServiceService, private router: Router, private route: ActivatedRoute) { }
 
-  constructor() { }
+  ngOnInit() {
+    const shopClientId = parseInt(this.route.snapshot.paramMap.get('shopClientId'));
+    this.serviceUser.findById(shopClientId).subscribe(data => {
+      this.user = data;
+    }, error => console.log(error));
+  }
+  updateUser(){
+    this.serviceUser.updateUser(this.shopClientId,this.user)
+      .subscribe(data => console.log(data), error => console.log(error));
+    this.user = new User();
+  }
 
-  ngOnInit(): void {
+
+
+  onSubmit() {
+      this.updateUser();
   }
 
 }

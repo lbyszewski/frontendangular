@@ -1,1 +1,22 @@
-<p>user works!</p>
+<table class="table table-bordered table-striped">
+
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Phone</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ user.userShopId }}</td>
+    <td>{{ user.userLogin }}</td>
+    <td>{{ user.userEmail }}</td>
+    <td>{{ user.phoneNumber }}</td>
+  </tr>
+  </tbody>
+</table>
+<button (click)="usersList()" class="btn btn-primary">Back to User List</button><br>

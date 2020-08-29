@@ -1,1 +1,12 @@
-<p>edit-user works!</p>
+<form (ngSubmit)="onSubmit()">
+  <table>
+  <tbody>
+  <tr>
+    <td>{{ user.userShopId }}</td>
+    <td><input type="user.userLogin"  /></td>
+    <td>{{ user.phoneNumber }}</td>
+  </tr>
+  </tbody>
+  </table>
+</form>
+<button (click)="onSubmit()" class="btn btn-primary">Upgrade</button><br>

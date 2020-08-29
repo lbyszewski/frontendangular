@@ -11,6 +11,7 @@ import {UserServiceService} from '../user-service.service';
 export class UserFormComponent implements OnInit {
 
   user: User;
+  id: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +29,6 @@ export class UserFormComponent implements OnInit {
   gotoUserList() {
     this.router.navigate(['/users']);
   }
-
   ngOnInit(): void {
   }
 }
