@@ -15,13 +15,14 @@ export class UserServiceService {
   private usersUrlfind: string;
   private userById: string;
   private  editUsers: string;
+  private deleteUser: string;
 
   constructor(private http: HttpClient) {
     this.usersUrlsave = 'http://localhost:5858/shop/saveShopClient';
     this.usersUrlfind = 'http://localhost:5858/shop/findShopClient';
     this.userById = 'http://localhost:5858/shop/shopClient/';
     this.editUsers = 'http://localhost:5858/shop/updateShopClient/update';
-
+    this.deleteUser = 'http://localhost:5858/shop/deleteEntityRow/';
 
 
   }
@@ -38,6 +39,9 @@ export class UserServiceService {
   }
   public updateUser(shopClientId: number , value: any): Observable<any>{
       return this.http.put(`${this.editUsers}/${shopClientId}`, value);
+  }
+  public deleteById(shopClientId: number): Observable<any>{
+    return this.http.delete(`${this.deleteUser}/${shopClientId}`);
   }
 
 }

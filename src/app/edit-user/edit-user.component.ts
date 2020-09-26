@@ -19,6 +19,7 @@ export class EditUserComponent implements OnInit {
     this.serviceUser.findById(shopClientId).subscribe(data => {
       this.user = data;
     }, error => console.log(error));
+
   }
 
   updateUser(){
@@ -27,6 +28,11 @@ export class EditUserComponent implements OnInit {
         console.log(data);
         this.user = data;
       }, error => console.log(error));
+    this.usersList();
+  }
+
+    usersList(){
+    this.router.navigate(['users']);
   }
 
 }

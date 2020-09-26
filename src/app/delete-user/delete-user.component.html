@@ -1,0 +1,13 @@
+<table>
+<tbody>
+<tr *ngFor="let user of users">
+
+  <td>{{ user.userShopId }}</td>
+  <td>{{ user.userLogin }}</td>
+  <td>{{ user.userEmail }}</td>
+  <td>{{ user.phoneNumber }}</td>
+</tr>
+</tbody>
+</table>
+<button (click)="delUser(user.userShopId)"> User</button>
+

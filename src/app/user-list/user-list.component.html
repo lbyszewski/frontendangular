@@ -22,6 +22,7 @@
         <td>{{ user.phoneNumber }}</td>
         <td><button class="btn btn-primary" (click)="showUserId(user.userShopId)">Details</button></td>
         <td><button class="btn btn-primary" (click)="editUserId(user.userShopId)">Edit</button></td>
+        <td><button class="btn btn-primary" (click)="cancelUser(user.userShopId)">Delete</button></td>
       </tr>
       </tbody>
     </table>

@@ -40,5 +40,7 @@ export class UserListComponent implements OnInit {
   addUser(){
     this.router.navigate(['adduser']);
   }
-
+  cancelUser(shopClientId: number){
+    this.router.navigate(['/deleteId/' + shopClientId]);
+  }
 }
