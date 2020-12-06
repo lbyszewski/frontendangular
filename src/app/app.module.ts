@@ -11,6 +11,7 @@ import {UserServiceService} from './user-service.service';
 import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     UserFormComponent,
     UserComponent,
     EditUserComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    ViewUserComponent
   ],
   imports: [
     BrowserModule,

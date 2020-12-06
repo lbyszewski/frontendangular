@@ -12,6 +12,8 @@ export class UserListComponent implements OnInit {
 
 
   users: User[];
+  shopClientId: number;
+  user: User;
   constructor(private userService: UserServiceService, private router: Router, private route: ActivatedRoute) {
   }
 
@@ -25,7 +27,6 @@ export class UserListComponent implements OnInit {
         this.users = data;
       });
     }
-
 
 
     showUserId(shopClientId: number){

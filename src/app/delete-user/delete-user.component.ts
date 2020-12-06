@@ -22,17 +22,11 @@ export class DeleteUserComponent implements OnInit {
     this.service.findById(shopClientId).subscribe(data => {
       this.user = data;
     }, error => console.log(error));
-
-
+    this.delUser(shopClientId);
   }
 
-  delUser(shopClient: number) {
-    const resp = this.service.deleteById(shopClient);
+  delUser(shopClientId: number) {
+    const resp = this.service.deleteById(shopClientId);
     resp.subscribe((data) => this.user = data);
-    this.usersList();
-  }
-
-    usersList(){
-    this.router.navigate(['users']);
   }
 }
