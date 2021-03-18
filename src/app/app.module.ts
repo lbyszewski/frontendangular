@@ -12,6 +12,7 @@ import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -22,13 +23,14 @@ import { ViewUserComponent } from './view-user/view-user.component';
     UserComponent,
     EditUserComponent,
     DeleteUserComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent]

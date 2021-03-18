@@ -22,7 +22,7 @@ export class UserServiceService {
     this.usersUrlfind = 'http://localhost:5858/shop/findShopClient';
     this.userById = 'http://localhost:5858/shop/shopClient/';
     this.editUsers = 'http://localhost:5858/shop/updateShopClient/update';
-    this.deleteUser = 'http://localhost:5858/shop/deleteEntityRow/';
+    this.deleteUser = 'http://localhost:5858/shop/deleteEntityRow';
 
 
   }
@@ -34,6 +34,7 @@ export class UserServiceService {
   public findById(shopClientId: number): Observable<any>{
     return this.http.get<any>(this.userById + shopClientId);
   }
+  // tslint:disable-next-line:typedef
   public saveUser(user: User) {
     return this.http.post<User>(this.usersUrlsave, user);
   }
